@@ -1,0 +1,23 @@
+.venv/
+__pycache__/
+*.pyc
+.system_generated/
+.gemini/
+.agents/
+.idea/
+.vscode/
+*.log
+
+# Dependencies
+node_modules/
+**/node_modules/
+
+# Production builds
+dist/
+**/dist/
+
+# Credentials
+.env
+**/.env
+.env.local
+.env.*.local

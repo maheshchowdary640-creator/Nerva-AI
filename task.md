@@ -1,0 +1,22 @@
+# Tasks - Phase 8: Final Hackathon Hardening, Gemini Intelligence Layer, Judge Demo Mode & Deployment
+
+- [x] Express Backend Gemini Routing & Middleware
+  - [x] Create `/api/nerva/health` check endpoint
+  - [x] Create `/api/nerva/explain` strict grounding prompt compiler
+  - [x] Create `/api/nerva/ask` contextual search handler
+  - [x] Mount routing inside `backend/server.js`
+- [x] Client-Side Context compiler & offline fallback
+  - [x] Implement robust context bundle builder in `nervaIntelligenceService`
+  - [x] Implement deterministic offline templates if server connection is missing
+- [x] Premium Visual Architecture Blueprint
+  - [x] Build `src/pages/HowItThinks.tsx` outlining the 10 visual stages
+  - [x] Document clear division of authority between deterministic core and explanation layer
+  - [x] Mount route `/how-it-thinks` and register link inside `Sidebar.tsx`
+- [x] Interactive Gemini War Room Widgets
+  - [x] Bind executive briefings card and explanation tabs
+  - [x] Mount Ask NERVA search console with preset question pills
+- [x] Hardening & Testing Verification
+  - [x] Verify offline fallback state switches
+  - [x] Run standalone simulation assertions
+  - [x] Compile type checks (`npx tsc --noEmit`)
+  - [x] Verify production bundling (`npm run build`)
