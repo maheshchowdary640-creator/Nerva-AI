@@ -1,7 +1,7 @@
 {
-  "name": "ai-interview-coach-backend",
+  "name": "nerva-ai-backend",
   "version": "1.0.0",
-  "description": "Backend services for AI Interview Coach",
+  "description": "Backend API service for NERVA AI platform",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",

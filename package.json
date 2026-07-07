@@ -1,7 +1,7 @@
 {
-  "name": "ai-interview-coach-root",
+  "name": "nerva-ai-root",
   "version": "1.0.0",
-  "description": "Full-stack AI Interview Coach App",
+  "description": "NERVA AI — The Autonomous Nervous System for Business Operations",
   "main": "server.js",
   "scripts": {
     "install-all": "npm install && npm install --prefix backend && npm install --prefix frontend --legacy-peer-deps",

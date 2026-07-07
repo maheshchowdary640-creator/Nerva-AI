@@ -6,6 +6,8 @@ import { ExecutionPlan, RecoveryMonitor } from '../types/execution';
 
 export type AIProviderStatus = 'AVAILABLE' | 'UNAVAILABLE' | 'NOT_CONFIGURED' | 'RATE_LIMITED' | 'ERROR';
 
+const API_BASE = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000';
+
 export interface NervaIntelligenceContext {
   incident: SentinelIncident | null;
   anomalies: Anomaly[];
@@ -122,7 +124,7 @@ export const nervaIntelligenceService = {
 
   async checkGeminiHealth(): Promise<AIProviderStatus> {
     try {
-      const res = await fetch('http://localhost:5000/api/nerva/health');
+      const res = await fetch(`${API_BASE}/api/nerva/health`);
       if (!res.ok) return 'UNAVAILABLE';
       const data = await res.json();
       return data.status === 'AVAILABLE' ? 'AVAILABLE' : 'NOT_CONFIGURED';
@@ -133,7 +135,7 @@ export const nervaIntelligenceService = {
 
   async generateExplanation(type: string, context: NervaIntelligenceContext): Promise<string> {
     try {
-      const res = await fetch('http://localhost:5000/api/nerva/explain', {
+      const res = await fetch(`${API_BASE}/api/nerva/explain`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ type, context })
@@ -152,7 +154,7 @@ export const nervaIntelligenceService = {
 
   async askQuestion(question: string, context: NervaIntelligenceContext): Promise<string> {
     try {
-      const res = await fetch('http://localhost:5000/api/nerva/ask', {
+      const res = await fetch(`${API_BASE}/api/nerva/ask`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ question, context })

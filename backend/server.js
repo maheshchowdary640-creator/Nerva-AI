@@ -2,7 +2,6 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const connectDB = require('./config/db');
-// const interviewRoutes = require('./routes/interviewRoutes');
 
 // Initialize express app
 const app = express();
@@ -21,11 +20,10 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Root route to verify server status
 app.get('/', (req, res) => {
-  res.send('AI Interview Coach API is running successfully.');
+  res.send('NERVA AI Platform API is running successfully.');
 });
 
 // Register API Routes
-// app.use('/api', interviewRoutes);
 const nervaRoutes = require('./routes/nervaRoutes');
 app.use('/api/nerva', nervaRoutes);
 
