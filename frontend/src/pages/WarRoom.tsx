@@ -211,7 +211,11 @@ export const WarRoom: React.FC = () => {
                   <div className="text-xs text-indigo-200 bg-indigo-950/10 border border-indigo-950/20 p-4.5 rounded-2xl leading-relaxed mt-2.5 max-w-3xl">
                     <div className="flex items-center space-x-1.5 text-[8px] font-black uppercase text-indigo-400 tracking-widest mb-2 pb-1 border-b border-indigo-950">
                       <Sparkles className="h-3 w-3 text-indigo-400 animate-pulse" />
-                      <span>Gemini Executive Briefing</span>
+                      <span>
+                        {currentBriefing.includes('Fallback Mode') 
+                          ? 'Executive Briefing (Fallback Mode)' 
+                          : 'Gemini Executive Briefing'}
+                      </span>
                     </div>
                     <div className="prose prose-invert text-slate-350 leading-relaxed font-mono">
                       {currentBriefing.split('\n').map((line, idx) => (
@@ -484,7 +488,11 @@ export const WarRoom: React.FC = () => {
                     <div className="text-xs text-violet-200 bg-violet-950/15 border border-violet-950/30 p-4.5 rounded-2xl leading-relaxed mt-2 animate-fade-in font-mono">
                       <div className="flex items-center space-x-1.5 text-[8px] font-black uppercase text-violet-450 tracking-widest mb-1.5">
                         <Sparkles className="h-3.5 w-3.5" />
-                        <span>Gemini Diagnostic Explanation</span>
+                        <span>
+                          {currentInvestigationExplanation.includes('Fallback Mode')
+                            ? 'Diagnostic Explanation (Fallback Mode)'
+                            : 'Gemini Diagnostic Explanation'}
+                        </span>
                       </div>
                       {currentInvestigationExplanation.split('\n').map((line, idx) => (
                         <p key={idx} className="mt-1">{line}</p>
@@ -557,7 +565,11 @@ export const WarRoom: React.FC = () => {
                     <div className="text-xs text-indigo-200 bg-indigo-950/15 border border-indigo-950/30 p-4.5 rounded-2xl leading-relaxed mt-2 animate-fade-in font-mono">
                       <div className="flex items-center space-x-1.5 text-[8px] font-black uppercase text-indigo-400 tracking-widest mb-1.5">
                         <Sparkles className="h-3.5 w-3.5" />
-                        <span>Gemini Recommendation Explanation</span>
+                        <span>
+                          {currentDecisionExplanation.includes('Fallback Mode')
+                            ? 'Recommendation Explanation (Fallback Mode)'
+                            : 'Gemini Recommendation Explanation'}
+                        </span>
                       </div>
                       {currentDecisionExplanation.split('\n').map((line, idx) => (
                         <p key={idx} className="mt-1">{line}</p>
@@ -856,7 +868,11 @@ export const WarRoom: React.FC = () => {
                   <div className="text-xs text-indigo-200 bg-indigo-950/15 border border-indigo-950/30 p-5 rounded-2xl leading-relaxed mt-2 animate-fade-in font-mono space-y-2">
                     <div className="flex items-center space-x-1.5 text-[8px] font-black uppercase text-indigo-455 tracking-widest mb-1.5 pb-1 border-b border-indigo-950">
                       <Sparkles className="h-3.5 w-3.5" />
-                      <span>Gemini Incident Postmortem Narrative</span>
+                      <span>
+                        {currentPostmortem.includes('Fallback Mode')
+                          ? 'Incident Postmortem (Fallback Mode)'
+                          : 'Gemini Incident Postmortem Narrative'}
+                      </span>
                     </div>
                     {currentPostmortem.split('\n').map((line, idx) => (
                       <p key={idx} className="mt-1">{line}</p>
